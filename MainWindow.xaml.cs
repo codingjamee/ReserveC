@@ -24,5 +24,10 @@ namespace Reservoom
         {
             InitializeComponent();
         }
+
+        private void ReservationListingView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
