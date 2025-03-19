@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:Reservoom"
         xmlns:views="clr-namespace:Reservoom.Views"
         mc:Ignorable="d"
-        Title="Reservoom" Height="450" Width="800">
-    <Grid>
-        <views:MakeReservationView/>
+        Title="Reservoom" 
+        FontSize="14"
+        Height="450" 
+        Width="800">
+    <Grid Margin="20 10" MaxWidth="600">
+        <views:ReservationListingView/>
     </Grid>
 </Window>
