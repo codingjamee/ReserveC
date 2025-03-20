@@ -11,6 +11,6 @@
         Height="450" 
         Width="800">
     <Grid Margin="20 10" MaxWidth="600">
-        <views:ReservationListingView Loaded="ReservationListingView_Loaded"/>
+        <views:ReservationListingView DataContext="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>

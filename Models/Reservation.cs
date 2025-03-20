@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Reservoom.Models
 {
-    class Reservation
+    public class Reservation
     {
         public RoomId RoomId { get; }
         public string Username { get; }

@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Reservoom.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Grid.IsSharedSizeScope="True">
@@ -27,8 +26,8 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Name" Grid.Row="0"/>
-            <TextBox Text="" 
+            <TextBlock Text="UserName" Grid.Row="0"/>
+            <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" 
                      Grid.Row="1" 
                      Margin="0 5 0 0"/>
         </Grid>
@@ -44,21 +43,21 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock 
-                Text="Floor Number" 
+                Text="Floor No." 
                 Grid.Row="0" 
                 Grid.Column="0"/>
             <TextBox 
-                Text="" 
+                Text="{Binding FloorNumber, UpdateSourceTrigger=PropertyChanged}" 
                 Grid.Row="1" 
                 Grid.Column="0" 
                 Margin="0 5 0 0"/>
 
             <TextBlock 
-                Text="Room Number" 
+                Text="Room No." 
                 Grid.Row="0" 
                 Grid.Column="1"/>
             <TextBox 
-                Text="" 
+                Text="{Binding RoomNumber, UpdateSourceTrigger=PropertyChanged}" 
                 Grid.Row="1" 
                 Grid.Column="1" 
                 Margin="10 5 0 0"/>
@@ -75,17 +74,17 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock 
-                Text="Floor Number" 
+                Text="Start Date" 
                 Grid.Row="0" 
                 Grid.Column="0"/>
             <DatePicker 
                 Grid.Row="1" 
                 Grid.Column="0" 
                 Margin="0 5 0 0"
-                SelectedDate=""/>
+                SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock 
-                Text="Floor Number" 
+                Text="End Date" 
                 Grid.Row="0" 
                  Margin="5 0 0 0"
                 Grid.Column="1"/>
@@ -94,12 +93,12 @@
                 Grid.Row="1" 
                 Grid.Column="1" 
                 Margin="10 5 0 0"
-                SelectedDate=""/> 
+                SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"/> 
         </Grid>
 
         <StackPanel Grid.Row="4"  Margin="0 25 0 0" Orientation="Horizontal">
-            <Button Content="Submit"/>
-            <Button Content="Cancel"/>
+            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
+            <Button Content="Cancel" Command="{Binding CancelCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
