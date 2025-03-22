@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Reservoom.Models
 {
-    class ReservationBook
+    public class ReservationBook
     {
         private readonly  List<Reservation> _reservations;
 

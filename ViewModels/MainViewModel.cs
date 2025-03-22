@@ -1,4 +1,6 @@
-﻿using Reservoom.ViewModel;
+﻿using Reservoom.Models;
+using Reservoom.Stores;
+using Reservoom.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +11,19 @@ namespace Reservoom.ViewModels
 {
     public class MainViewModel:ViewModelBase
     {
-        public ViewModelBase CurrentViewModel
+        private readonly NavigationStore _navigationStore;
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+
+        public MainViewModel(NavigationStore navigationStore)
         {
-            get;
-        }
-        public MainViewModel()
-        {
-            CurrentViewModel = new ReservationListingViewModel();
+            _navigationStore = navigationStore;
+
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
-        public void NavigateToMakeReservation()
+        private void OnCurrentViewModelChanged()
         {
-            //CurrentViewModel = new MakeReservationViewModel();
+           OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }
